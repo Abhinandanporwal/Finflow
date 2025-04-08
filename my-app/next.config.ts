@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname:"randomuser.me",
       }
     ]
+  },
+  experimental:{
+    serverActions:{
+      bodySizeLimit:"5mb",
+    }
   }
 };
 

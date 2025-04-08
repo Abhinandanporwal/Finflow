@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { getAccountWithTransactions } from "../../../../actions/accounts";
 import { BarLoader } from "react-spinners";
-import TransactionTable  from "../../dashboard/_components/transaction-table";
+import TransactionTable  from "../_components/transaction-table";
+import {AccountChart} from "../_components/account-charts";
 import { notFound } from "next/navigation";
 
 
@@ -38,14 +39,15 @@ const resolvedParams = await params
         </div>
       </div>
 
-      {/* Chart Section
+      {/* Chart Section*/}
       <Suspense
         fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
       >
         <AccountChart transactions={transactions} />
-      </Suspense> */}
+      </Suspense> 
 
       {/* Transactions Table */}
+      
       <Suspense
         fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
       >

@@ -72,11 +72,12 @@ const TransactionTable = ({ transactions }) => {
         const searchLower=searchTerm.toLowerCase();
         result=result.filter((transactions)=>transactions.description?.toLowerCase().includes(searchLower));
     }
-    if(recurringFilter){
-        result=result.filter((transactions)=>{if(recurringFilter==="reccuring")return transactions.isReccuring;
-            return !transactions.isReccuring;
-        });
-    }
+    result = result.filter((transaction) => {
+      if (recurringFilter === "recurring") return transaction.isRecurring;
+      return !transaction.isRecurring;
+    });
+    
+    
     if(typeFilter){
         result=result.filter((transactions)=>transactions.type===typeFilter);
     }

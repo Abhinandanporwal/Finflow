@@ -21,7 +21,7 @@ const Header = async() => {
     <div className='fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b'>
       <nav className='container mx-auto px-4 py-4 flex items-center justify-between'>
         <Link href='/'>
-        <Image src={"/logonew.svg"} alt="Finflow logo" height={60} width={200} className="h-12 w-auto object-contain" />
+        <Image src={"/logonew.svg"}  priority={true} alt="Finflow logo" height={60} width={200} className="h-12 w-auto object-contain" />
       
         </Link>
         <div className='flex items-center space-x-4'>

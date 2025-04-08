@@ -22,41 +22,42 @@ export default function Home() {
         </div>
       </section>
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Everything you need to mange your finances
-            </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuresData.map((feature,key)=>(
-              <Card>
-              <CardContent className="space-y-4 pt-4">
-                {feature.icon}
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p>{feature.description}</p>
-              </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-20 bg-blue-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            How it works
-            </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {howItWorksData.map((step,key)=>(
-              <Card>
-              <CardContent className="space-y-4 pt-4">
-                {step.icon}
-                <h3 className="text-xl font-semibold">{step.title}</h3>
-                <p>{step.description}</p>
-              </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">
+      Everything you need to manage your finances
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuresData.map((feature, index) => (
+        <Card key={index}> 
+          <CardContent className="space-y-4 pt-4">
+            {feature.icon}
+            <h3 className="text-xl font-semibold">{feature.title}</h3>
+            <p>{feature.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+<section className="py-20 bg-blue-50 dark:bg-gray-800">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">
+      How it works
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {howItWorksData.map((step, index) => (
+        <Card key={index}> {/* ✅ Added 'key' here */}
+          <CardContent className="space-y-4 pt-4">
+            {step.icon}
+            <h3 className="text-xl font-semibold">{step.title}</h3>
+            <p>{step.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">

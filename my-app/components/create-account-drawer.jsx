@@ -68,7 +68,7 @@ const onSubmit=async(data)=>{
 
             <Select onValueChange={(value)=>setValue("type",value)}
                 defaultValue={watch("type")} >
-            <SelectTrigger id="type">
+            <SelectTrigger id="type" className="w-full">
                 <SelectValue placeholder="Select Type" />
             </SelectTrigger>
             <SelectContent className="flex">
