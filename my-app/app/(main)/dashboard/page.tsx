@@ -1,38 +1,33 @@
-// "use client"
 import React from "react";
 import CreateAccountDrawer from "../../../components/create-account-drawer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus } from "lucide-react";
 import { getUserAccounts } from "../../../actions/dashboard";
 import { AccountCard } from "./_components/account_card";
-import  BudgetProgress  from "./_components/budget-progress";
-import {getCurrentBudget } from "../../../actions/budget"
+import BudgetProgress from "./_components/budget-progress";
+import { getCurrentBudget } from "../../../actions/budget";
 
-const DashboardPage =async () => {
-  const [accounts, transactions] = await Promise.all([
-    getUserAccounts(),
-    // getDashboardData(),
-  ]);
 
-  const defaultAccount = accounts?.find((account) => account.isDefault);
+const DashboardPage = async () => {
+  const accounts: SerializedAccount[] = await getUserAccounts();
 
-  // Get budget for default account
-  let budgetData = null;
+  const defaultAccount = accounts.find((account) => account.isDefault);
+
+  let budgetData: BudgetData | null = null;
   if (defaultAccount) {
     budgetData = await getCurrentBudget(defaultAccount.id);
   }
 
   return (
-    <div className="px-5 ">
+    <div className="px-5">
       {/* Budget Progress */}
       <div className="mb-5">
-
-      {defaultAccount && budgetData && (
-        <BudgetProgress
-        initialBudget={budgetData?.budget}
-        currentExpenses={budgetData?.currentExpenses || 0}
-        />
-      )}
+        {defaultAccount && budgetData && (
+          <BudgetProgress
+            initialBudget={budgetData.budget}
+            currentExpenses={budgetData.currentExpenses || 0}
+          />
+        )}
       </div>
 
       {/* Account Grid */}

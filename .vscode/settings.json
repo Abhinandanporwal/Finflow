@@ -60,6 +60,9 @@
     "iostream": "cpp",
     "valarray": "cpp",
     "cmath": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "vector": "cpp"
   }
 }
